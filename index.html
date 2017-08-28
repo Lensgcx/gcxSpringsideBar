@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>gcxSpringsideBar-1.1.0</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href="src/css/iconfont.css" rel="stylesheet">
+	<link rel="stylesheet" href="src/css/gcxSpringsideStyle.css">
+	<script src="src/js/jquery-1.8.3.js"></script>
+	<script src="src/js/jquery.easing.js"></script>
+	<script src="src/js/jquery.color.js"></script>
+
+	<style>
+		/*内容部分*/
+		#bg {position:relative;width:100%;min-width:37.5rem;height:0;padding-bottom:181.1%;background:url("src/img/gcxSpringsideBar.jpg") no-repeat;background-size:100% auto;z-index:1;}
+		.bg_Mask {position:relative;width:inherit;background:rgba(186,235,255,0.02);}
+		@media screen and (min-width:0px) and (max-width:600px) {#bg {padding-bottom:0;height:1086px;}
+			.bg_Mask {height:1232px;}
+		}
+		.plug-inTit { position: absolute; left: 50%; margin: 12.5rem 0 0 -18.75rem; color: #eaeaea; text-shadow: 0.75rem 0.75rem 0.75rem #cccccc; z-index: 2 }
+		.cube { position: absolute; width: 12.5rem; height: 12.5rem; left: 50%; margin: 25rem 0 0 -6.25rem; transform-style: preserve-3d; animation: gcx 10s infinite linear; z-index: 0 }
+		@keyframes gcx {
+			to { transform: rotateY(360deg) rotateX(360deg) }
+		}
+		.cube div { width: 12.5rem; height: 12.5rem; position: absolute; border: 0.25rem solid #fff; filter: alpha(opacity=20); -moz-opacity: 0.2; opacity: 0.2; }
+		.top { transform-origin: 50% 0; transform: translateZ(50px) rotateX(-90deg) }
+		.bottom { transform-origin: 50% 100%; transform: translateZ(50px) rotateX(90deg) }
+		.front { transform: translateZ(50px) }
+		.back { transform: translateZ(-50px) }
+		.left { transform-origin: 0 50%; transform: translateZ(50px) rotateY(90deg) }
+		.right { transform-origin: 100% 50%; transform: translateZ(50px) rotateY(-90deg) }
+
+
+		/*简化侧边栏*/
+		#tabpanel-simple li{
+			color: rgba(0, 0, 0, .99);
+			/*background-color: rgba(221, 221, 221, 0.2);*/
+		}
+		#tabpanel-simple {position:fixed;top:4px;list-style:none;z-index:999;}
+		#tabpanel-simple li {position:absolute;right:0;cursor:pointer;}
+		#tabpanel-simple li div {position:relative;width:inherit;height:inherit;}
+		#tabpanel-simple li i {position:absolute;display:block;width:inherit;height:inherit;bottom:0;line-height:2em;font-size:1.5em;text-align:center;z-index:100;}
+		#tabpanel-simple li i:hover {-moz-text-shadow:1px 1px 6px rgba(255,255,255,.6);-webkit-text-shadow:1px 1px 6px rgba(255,255,255,.6);text-shadow:1px 1px 6px rgba(255,255,255,.6);}
+		#tabpanel-simple li.open-tabpanel i:hover {-moz-transform:scale(1.2) rotate(90deg);-webkit-transform:scale(1.2) rotate(90deg);-o-transform:scale(1.2) rotate(90deg);transform:scale(1.2) rotate(90deg);}
+		#tabpanel-simple li.go-wintop i:hover {-moz-transform:scale(1.2);-webkit-transform:scale(1.2);-o-transform:scale(1.2);transform:scale(1.2);}
+
+	</style>
+</head>
+<body>
+	<div style="height: 2000px;width: 100%;">
+
+	</div>
+	<div style="width: 5em;height: 5em;font-size: 2em;background: seagreen">
+		<div style="width: 5em;height: 100%;background: rgba(0,0,0,0.5)"></div>
+	</div>
+	<!--<div id="bg">-->
+		<!--&lt;!&ndash;<div class="hhh" style="display:none;position:absolute;width: 17px;height: 500px;background: aqua;right: 0"></div>&ndash;&gt;-->
+		<!--<div class="bg_Mask">-->
+			<!--<h1 class="plug-inTit">jQuery-gcx SpringsideBar Plugin v1.1.0</h1>-->
+			<!--<div class="cube">-->
+				<!--<div class="top"></div>-->
+				<!--<div class="bottom"></div>-->
+				<!--<div class="front"></div>-->
+				<!--<div class="back"></div>-->
+				<!--<div class="left"></div>-->
+				<!--<div class="right"></div>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+	<div id="tabpanel">
+		<div class="tabclose"><i class="animate250 iconfont icon-close"></i></div>
+		<div class="tablist">
+			<ul>
+				<li><a id="tab_menu" href="#"><i class="iconfont icon-all1"></i>MENU</a></li>
+				<li><a href="#"><i class="iconfont icon-search"></i>SEARCH</a></li>
+				<li><a href="#"><i class="iconfont icon-text1"></i>NEWS & EVENTS</a></li>
+			</ul>
+		</div>
+		<div class="tabactions">
+			<ul>
+				<li>APPLY</li>
+				<li>VISIT</li>
+				<li>SEE PROGRAMS</li>
+			</ul>
+		</div>
+		<div class="tabmenu">
+			<div class="site_tree">
+				<ul>
+					<li class="sitelevel">
+						<div class="droptit">About Us</div>
+						<a class="dropopen" href="#"><i class="iconfont icon-jia2"></i></a>
+						<ul class="dropmenu">
+							<li>
+								<a href="#">University Leadership</a>
+							</li>
+							<li>
+								<a href="#">History & Mission</a>
+							</li>
+							<li>
+								<a href="#">Notable Alumni</a>
+							</li>
+							<li>
+								<a href="#">Hopkins in the Community</a>
+							</li>
+							<li>
+								<a href="#">Hopkins Around the World</a>
+							</li>
+							<li style="border: none">
+								<a href="#">News from Johns Hopkins</a>
+							</li>
+						</ul>
+					</li>
+					<li class="sitelevel">
+						<div class="droptit">Academics</div>
+						<a class="dropopen" href="#"><i class="iconfont icon-jia2"></i></a>
+						<ul class="dropmenu">
+							<li>
+								<a href="#">Undergraduate Studies</a>
+							</li>
+							<li>
+								<a href="#">Graduate Studies</a>
+							</li>
+							<li>
+								<a href="#">Online Studies</a>
+							</li>
+							<li>
+								<a href="#">Part-Time & Non-Degree Programs</a>
+							</li>
+							<li>
+								<a href="#">Summer Programs</a>
+							</li>
+							<li style="border: none">
+								<a href="#">Academic Calendars</a>
+							</li>
+						</ul>
+					</li>
+					<li class="sitelevel">
+						<div class="droptit">Schools & Divisions</div>
+						<a class="dropopen" href="#"><i class="iconfont icon-jia2"></i></a>
+						<ul class="dropmenu">
+							<li>
+								<a href="#">Advanced International Studies</a>
+							</li>
+							<li>
+								<a href="#">Applied Physics Laboratory</a>
+							</li>
+							<li>
+								<a href="#">Arts & Sciences</a>
+							</li>
+							<li>
+								<a href="#">Business</a>
+							</li>
+							<li>
+								<a href="#">Education</a>
+							</li>
+							<li>
+								<a href="#">Engineering</a>
+							</li>
+							<li>
+								<a href="#">Medicine</a>
+							</li>
+							<li>
+								<a href="#">Nursing</a>
+							</li>
+							<li>
+								<a href="#">Peabody Conservatory</a>
+							</li>
+							<li style="border: none">
+								<a href="#">Public Health</a>
+							</li>
+						</ul>
+					</li>
+					<li class="sitelevel">
+						<div class="droptit">Admissions & Aid</div>
+						<a class="dropopen" href="#"><i class="iconfont icon-jia2"></i></a>
+						<ul class="dropmenu">
+							<li>
+								<a href="#">Undergraduate Admissions</a>
+							</li>
+							<li>
+								<a href="#">Graduate Admissions</a>
+							</li>
+							<li>
+								<a href="#">Plan a Visit</a>
+							</li>
+							<li>
+								<a href="#">Tuition & Costs</a>
+							</li>
+							<li style="border: none">
+								<a href="#">Financial Aid</a>
+							</li>
+						</ul>
+					</li>
+					<li class="sitelevel">
+						<div class="droptit">Research & Faculty</div>
+						<a class="dropopen" href="#"><i class="iconfont icon-jia2"></i></a>
+						<ul class="dropmenu">
+							<li>
+								<a href="#">Innovation & Incubation</a>
+							</li>
+							<li>
+								<a href="#">Bloomberg Professors</a>
+							</li>
+							<li>
+								<a href="#">Milestones</a>
+							</li>
+							<li>
+								<a href="#">Undergraduate Research</a>
+							</li>
+							<li style="border: none">
+								<a href="#">Libraries</a>
+							</li>
+						</ul>
+					</li>
+					<li class="sitelevel">
+						<div class="droptit">Campus Life</div>
+						<a class="dropopen" href="#"><i class="iconfont icon-jia2"></i></a>
+						<ul class="dropmenu">
+							<li>
+								<a href="#">Our Campuses</a>
+							</li>
+							<li>
+								<a href="#">About Baltimore</a>
+							</li>
+							<li>
+								<a href="#">Housing & Dining</a>
+							</li>
+							<li>
+								<a href="#">Arts & Culture</a>
+							</li>
+							<li>
+								<a href="#">Health & Wellness</a>
+							</li>
+							<li>
+								<a href="#">Athletics</a>
+							</li>
+							<li>
+								<a href="#">Security</a>
+							</li>
+							<li>
+								<a href="#">Disability Services</a>
+							</li>
+							<li style="border: none">
+								<a href="#">Calendar of Events</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="tab_links">
+					<li>
+						<a href="#">Maps & Directions</a>
+					</li>
+					<li>
+						<a href="#">Contact the University</a>
+					</li>
+					<li>
+						<a href="#">Employment Opportunities</a>
+					</li>
+					<li>
+						<a href="#">my.johnshopkins.edu</a>
+					</li>
+					<li>
+						<a href="#">Give to the University</a>
+					</li>
+					<li>
+						<a href="#">For Alumni</a>
+					</li>
+					<li>
+						<a href="#">For Parents</a>
+					</li>
+					<li>
+						<a href="#">For News Media</a>
+					</li>
+					<li>
+						<a href="#">Athletics</a>
+					</li>
+
+				</ul>
+			</div>
+			<div class="site_tree">
+				<div class="tabsearch">
+					<input class="tabipt" type="text" autofocus="autofocus">
+					<i class="iconfont icon-wrong searchempty"></i>
+					<button class="tabsub" type="submit"><i class="iconfont icon-search"></i>&nbsp;SEARCH</button>
+				</div>
+			</div>
+			<div class="site_tree">
+				<div style="width: inherit;height: 210px;background: skyblue"></div>
+			</div>
+		</div>
+		<!--<div id="tabmask"></div>-->
+	</div>
+</body>
+<script src="1111.js"></script>
+<script src="src/js/skin/greenleaf.js"></script>
+<script>
+window.onload = window.onresize = function()
+{
+	//	document.documentElement.style.fontSize=8/320*document.documentElement.clientWidth+'px';
+
+};
+//document.documentElement.style.fontSize = '';
+
+var $bg = $( '#bg' );    //背景
+$( '.bg_Mask' ).css( 'height', $bg.css( 'padding-bottom' ) );
+//当浏览器大小变化时
+$( window ).resize( function()
+{
+	if( $( window ).width() >= 620 )
+	{
+		$( '.bg_Mask' ).css( 'height', $bg.css( 'padding-bottom' ) );
+	}
+	else
+	{
+		$( '.bg_Mask' ).css( 'height', $bg.height() );
+	}
+} );
+
+$( '#tabpanel' ).gcxSpringsideBar(
+		defaults = {
+			size:'400'
+//			skin: 'greenleaf'
+		}
+);
+console.log();
+</script>
+</html>

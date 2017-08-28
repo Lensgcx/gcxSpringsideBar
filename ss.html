@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Panel - jQuery EasyUI Demo</title>
+	<script src="src/js/jquery-1.8.3.js"></script>
+
+</head>
+<body>
+	<div id="myDiv" style="width: 200px;height: 200px">asdasdasdasdas</div>
+	<script>
+	// plugin definition
+	$.fn.hilight = function( options )
+	{
+
+
+
+
+
+		// Extend our default options with those provided.
+		// Note that the first arg to extend is an empty object -
+		// this is to keep from overriding our "defaults" object.
+		var t = this;
+		opts = $.extend(true, {}, options);
+//		var opts = $.extend( true,{}, $.fn.hilight.colors.skin1, options );
+		if(typeof opts.skin === 'undefined' || typeof $.hilight.colors[options.skin] === 'undefined')
+			t.skin = $.fn.hilight.colors.skin1;
+		else
+			t.skin = $.extend( true,{}, $.fn.hilight.colors.skin1, options );
+
+		//		if(typeof opts.lang === 'undefined' || typeof $.trumbowyg.langs[opts.lang] === 'undefined')
+		//			t.lang = $.trumbowyg.langs.en;
+		//		else
+		//			t.lang = $.extend(true, {}, $.trumbowyg.langs.en, $.trumbowyg.langs[opts.lang]);
+		// Our plugin implementation code goes here.
+		$( this ).css( { color: opts.foreground, background: opts.background } )
+	};
+	// plugin defaults - added as a property on our plugin function
+	$.fn.hilight.colors = {
+		skin1: {
+			foreground: 'red',
+			background: 'yellow'
+		}
+
+	};
+	//现在使用者可以包含像这样的一行在他们的脚本里：
+	//这个只需要调用一次，且不一定要在ready块中调用
+	$.fn.hilight.colors.skin1 = {
+		foreground: 'blue',
+		background: '#454545'
+	};
+	//接下来我们可以像这样使用插件的方法，结果它设置蓝色的前景色：
+	$( '#myDiv' ).hilight();
+	</script>
+</body>
