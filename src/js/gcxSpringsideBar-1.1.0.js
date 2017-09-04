@@ -180,7 +180,7 @@
 
 		function selectSkin( opts )
 		{
-			if( opts.skin == 'default' || opts.skin == '' )
+			if( opts.skin === 'default' || opts.skin === '' )
 			{
 				return jQuery.gcxSpringsideBar.color.default;
 				////默认字体颜色1
@@ -210,7 +210,7 @@
 				////简化侧边栏 底色
 				//opts.colbck_tabSimple = 'rgba(221, 221, 221, 0.2)';
 			}
-			else if( opts.skin == 'greenleaf' )
+			else if( opts.skin === 'greenleaf' )
 			{
 				//默认字体颜色1
 				opts.colfont_def1 = 'rgba(255, 255, 255, .8)';
@@ -239,7 +239,7 @@
 				//简化侧边栏 底色
 				opts.colbck_tabSimple = 'rgba(221, 221, 221, 0.4)';   //浅灰色
 			}
-			else if( opts.skin == 'pangold' )
+			else if( opts.skin === 'pangold' )
 			{
 				//默认字体颜色1
 				opts.colfont_def1 = 'rgba(255, 255, 255, .8)';
