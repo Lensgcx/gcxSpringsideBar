@@ -1,11 +1,7 @@
 /**
  * Created by Administrator on 2017/3/14.
  */
-/**
- * Created by Administrator on 2017/3/14.
- */
 /* ===========================================================
- * ru.js
  * Russion translation for Trumbowyg
  * http://alex-d.github.com/Trumbowyg
  * ===========================================================
